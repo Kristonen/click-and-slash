@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://jgi4k8jh4ghu"]
+
+[ext_resource type="Texture2D" uid="uid://tsen0mx252t1" path="res://ground.tres" id="1_dxppu"]
+[ext_resource type="PackedScene" uid="uid://dj0ovue2a53ue" path="res://spawner.tscn" id="2_gy3sr"]
+[ext_resource type="Script" uid="uid://b4f1i2hp7a62a" path="res://spawner_details.gd" id="3_dsnr4"]
+[ext_resource type="Resource" uid="uid://ybjo1jlu1qyx" path="res://test_spawn_data.tres" id="4_dsnr4"]
+
+[node name="TestWorld" type="Node2D" unique_id=1043288071]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2001977593]
+position = Vector2(579.49994, 328.00003)
+scale = Vector2(18.046873, 10.218751)
+texture = ExtResource("1_dxppu")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=749764337]
+position = Vector2(577, 322)
+
+[node name="Enemies" type="Node2D" parent="." unique_id=1210898731]
+y_sort_enabled = true
+
+[node name="Spawner" parent="." unique_id=1407522803 node_paths=PackedStringArray("enemy_node") instance=ExtResource("2_gy3sr")]
+spawn_data = Array[ExtResource("3_dsnr4")]([ExtResource("4_dsnr4")])
+enemy_node = NodePath("../Enemies")

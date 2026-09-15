@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://85est4r0cvec"]
+
+[ext_resource type="Texture2D" uid="uid://bewuhyl8n445f" path="res://test_enemy.tres" id="1_ghv5c"]
+[ext_resource type="Script" uid="uid://c4bh3t4wh5pf3" path="res://test_enemy.gd" id="1_yikbh"]
+[ext_resource type="PackedScene" uid="uid://cl0q7kg15c3e3" path="res://clickable.tscn" id="3_x4eh8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bhunq"]
+size = Vector2(32, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_riqys"]
+size = Vector2(34, 34)
+
+[node name="TestEnemy" type="CharacterBody2D" unique_id=1838931412 node_paths=PackedStringArray("clickable")]
+collision_layer = 2
+script = ExtResource("1_yikbh")
+speed = 1500.0
+clickable = NodePath("Clickable")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=248719239]
+texture = ExtResource("1_ghv5c")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=570950793]
+shape = SubResource("RectangleShape2D_bhunq")
+
+[node name="Clickable" parent="." unique_id=1213497317 instance=ExtResource("3_x4eh8")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Clickable" unique_id=1063318912]
+shape = SubResource("RectangleShape2D_riqys")
