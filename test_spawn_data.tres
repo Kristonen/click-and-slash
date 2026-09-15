@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="SpawnData" format=3 uid="uid://ybjo1jlu1qyx"]
 
 [ext_resource type="Script" uid="uid://b4f1i2hp7a62a" path="res://spawner_details.gd" id="1_6adl2"]
-[ext_resource type="PackedScene" uid="uid://85est4r0cvec" path="res://test_enemy.tscn" id="1_ji0gt"]
+[ext_resource type="PackedScene" uid="uid://85est4r0cvec" path="res://enemy/test_enemy.tscn" id="1_ji0gt"]
 
 [resource]
 script = ExtResource("1_6adl2")
