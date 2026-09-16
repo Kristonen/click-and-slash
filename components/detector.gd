@@ -1,3 +1,4 @@
+class_name Detector
 extends Area2D
 
 func _ready() -> void:

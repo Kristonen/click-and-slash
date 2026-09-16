@@ -30,7 +30,8 @@ func check_if_in_viewport(pos : Vector2) -> bool:
 
 func _on_clicked() -> void:
 	for i : int in range(3):
-		var coin : Node2D = coin_scene.instantiate()
+		var coin : Coin = coin_scene.instantiate()
 		coin.global_position = global_position
+		coin.is_collectable = false
 		get_tree().current_scene.add_child(coin)
 	super()

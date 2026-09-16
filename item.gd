@@ -1,8 +1,17 @@
 class_name Item
 extends Node2D
+
+signal launch_finished(item : Item)
+
 @export_group("Dependencies")
 @export var collectable : Collectable
 @export var sprite : Sprite2D
+
+@export_group("Following")
+@export var start_speed : float = 50.0
+@export var max_speed : float = 150.0
+@export var friction : float = 0.05
+var speed : float
 
 var is_collectable : bool
 var is_following : bool = false
@@ -12,7 +21,15 @@ func _ready() -> void:
 	assert(sprite != null, "Sprite not set")
 	collectable.detected_by_collector.connect(_on_detector)
 	collectable.collected.connect(_on_collected)
+	launch_finished.connect(Game.player.check_item_launch_finishded)
+	speed = start_speed
 	launch()
+	
+func _physics_process(delta: float) -> void:
+	if is_following:
+		var dir : Vector2 = (Game.player.global_position - global_position).normalized()
+		global_position += dir * speed * delta
+		speed = lerp(speed, max_speed, friction)
 
 func launch() -> void:
 	var x : float = randf_range(-100, 100)
@@ -32,6 +49,7 @@ func launch() -> void:
 	
 func _on_launch_finished() -> void:
 	is_collectable = true
+	launch_finished.emit(self)
 
 func _on_detector() -> void:
 	if is_collectable: 
