@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 [autoload]
 
 Game="*uid://cncbys3ydt7nc"
+Utils="*uid://dnm3y2s8fo00c"
 
 [debug]
 
