@@ -29,7 +29,8 @@ func check_if_in_viewport(pos : Vector2) -> bool:
 	return false
 
 func _on_clicked() -> void:
-	var coin : Node2D = coin_scene.instantiate()
-	coin.global_position = global_position
-	get_tree().current_scene.add_child(coin)
+	for i : int in range(3):
+		var coin : Node2D = coin_scene.instantiate()
+		coin.global_position = global_position
+		get_tree().current_scene.add_child(coin)
 	super()

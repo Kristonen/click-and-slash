@@ -7,9 +7,10 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bhunq"]
 size = Vector2(8, 16)
 
-[node name="Coin" type="Node2D" unique_id=238615950 node_paths=PackedStringArray("collectable")]
+[node name="Coin" type="Node2D" unique_id=238615950 node_paths=PackedStringArray("collectable", "sprite")]
 script = ExtResource("1_v7riw")
 collectable = NodePath("Collectable")
+sprite = NodePath("Sprite2D")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=893978620]
 texture = ExtResource("1_0t63x")
