@@ -15,6 +15,7 @@ size = Vector2(34, 34)
 collision_layer = 2
 script = ExtResource("1_hdm1v")
 coin_scene = ExtResource("2_1xekb")
+clicks_to_kill = 5
 speed = 1500.0
 clickable = NodePath("Clickable")
 

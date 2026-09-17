@@ -3,9 +3,14 @@ class_name Player extends Node2D
 @onready var collector: Collector = $Collector
 @onready var detector: Detector = $Detector
 
+var coins : int:
+	set(value):
+		coins = value
+		Game.update_coins()
+
 
 func _ready() -> void:
-	Game.player = self
+	pass
 
 func _process(delta: float) -> void:
 	global_position = get_global_mouse_position()

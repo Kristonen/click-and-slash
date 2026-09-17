@@ -21,13 +21,13 @@ func _ready() -> void:
 	assert(sprite != null, "Sprite not set")
 	collectable.detected_by_collector.connect(_on_detector)
 	collectable.collected.connect(_on_collected)
-	launch_finished.connect(Game.player.check_item_launch_finishded)
+	launch_finished.connect(Game.get_player().check_item_launch_finishded)
 	speed = start_speed
 	launch()
 	
 func _physics_process(delta: float) -> void:
 	if is_following:
-		var dir : Vector2 = (Game.player.global_position - global_position).normalized()
+		var dir : Vector2 = (Game.get_player().global_position - global_position).normalized()
 		global_position += dir * speed * delta
 		speed = lerp(speed, max_speed, friction)
 
@@ -59,4 +59,5 @@ func _on_detector() -> void:
 
 func _on_collected() -> void:
 	if is_collectable:
+		Game.item_collected.emit(self)
 		queue_free()

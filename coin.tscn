@@ -12,7 +12,7 @@ script = ExtResource("1_v7riw")
 collectable = NodePath("Collectable")
 sprite = NodePath("Sprite2D")
 start_speed = 5.0
-max_speed = 500.0
+max_speed = 2000.0
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=893978620]
 texture = ExtResource("1_0t63x")
