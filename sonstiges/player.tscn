@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://8rttip8xj243"]
+
+[ext_resource type="Script" uid="uid://ct7wgaxakuf3u" path="res://sonstiges/player.gd" id="1_4flbx"]
+[ext_resource type="PackedScene" uid="uid://cs8l7kxnveuh7" path="res://components/collector.tscn" id="2_onrkg"]
+[ext_resource type="PackedScene" uid="uid://55a1uodmvxuy" path="res://components/detector.tscn" id="3_i3pqv"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_bhunq"]
+radius = 3.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_riqys"]
+radius = 81.3019
+
+[node name="Player" type="Node2D" unique_id=893300391]
+script = ExtResource("1_4flbx")
+
+[node name="Collector" parent="." unique_id=1284946241 instance=ExtResource("2_onrkg")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Collector" unique_id=818814118]
+shape = SubResource("CircleShape2D_bhunq")
+
+[node name="Detector" parent="." unique_id=1322762510 instance=ExtResource("3_i3pqv")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Detector" unique_id=182335735]
+shape = SubResource("CircleShape2D_riqys")

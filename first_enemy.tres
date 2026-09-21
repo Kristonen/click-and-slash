@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="SpawnData" format=3 uid="uid://bdaqfqnxxcup5"]
+
+[ext_resource type="PackedScene" uid="uid://c7sot7mwb42h4" path="res://entity/enemy/first_enemy/FirstEnemy.tscn" id="1_3xf1v"]
+[ext_resource type="Script" uid="uid://b4f1i2hp7a62a" path="res://resources/spawn_data/spawner_details.gd" id="1_28kev"]
+
+[resource]
+script = ExtResource("1_28kev")
+enemy_scene = ExtResource("1_3xf1v")
+max_amount = 5
+spawn_interval = 2.0
+metadata/_custom_type_script = "uid://b4f1i2hp7a62a"

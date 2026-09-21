@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://617n71iflkl3"]
+
+[ext_resource type="Script" uid="uid://gix8ropmbnu1" path="res://components/movment_components/teleport_component.gd" id="1_pmtns"]
+
+[node name="TeleportComponent" type="Node" unique_id=1331087752]
+script = ExtResource("1_pmtns")
+
+[node name="Timer" type="Timer" parent="." unique_id=1889052798]
+one_shot = true

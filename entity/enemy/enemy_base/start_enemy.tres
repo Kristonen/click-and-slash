@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="EnemyData" format=3 uid="uid://cj7c7q7h56030"]
+
+[ext_resource type="Script" path="res://resources/enemy_data/behave_data/WanderBehave.gd" id="1_6v62a"]
+[ext_resource type="PackedScene" uid="uid://ccbylm4c4myde" path="res://components/movment_components/WanderComponent.tscn" id="2_dgl34"]
+[ext_resource type="Script" path="res://resources/enemy_data/enemy_data.gd" id="2_p7rg8"]
+[ext_resource type="Texture2D" uid="uid://bewuhyl8n445f" path="res://entity/enemy/first_enemy/first_enemy.tres" id="3_dgl34"]
+
+[sub_resource type="Resource" id="Resource_kt6p6"]
+script = ExtResource("1_6v62a")
+base_speed = 1500.0
+metadata/_custom_type_script = "uid://cg8ddv22cr2ri"
+
+[resource]
+script = ExtResource("2_p7rg8")
+max_health = 1
+speed = 1500.0
+coin_amount = 5
+sprite = ExtResource("3_dgl34")
+behave = SubResource("Resource_kt6p6")
+components = Array[PackedScene]([ExtResource("2_dgl34")])
+metadata/_custom_type_script = "uid://bxv4q1fg4smk4"

@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://c7sot7mwb42h4"]
+
+[ext_resource type="Script" uid="uid://dki3talhwlq5i" path="res://entity/enemy/first_enemy/first_enemy.gd" id="1_sh4xl"]
+[ext_resource type="Texture2D" uid="uid://bewuhyl8n445f" path="res://entity/enemy/first_enemy/first_enemy.tres" id="2_wy55s"]
+[ext_resource type="PackedScene" uid="uid://cl0q7kg15c3e3" path="res://components/clickable.tscn" id="3_jr17w"]
+[ext_resource type="PackedScene" uid="uid://ccbylm4c4myde" path="res://components/movment_components/WanderComponent.tscn" id="4_gdg70"]
+[ext_resource type="PackedScene" uid="uid://fsmtw2qkffas" path="res://components/HealthComponent.tscn" id="5_pms5r"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bhunq"]
+size = Vector2(32, 32)
+
+[node name="FirstEnemy" type="CharacterBody2D" unique_id=1446427759]
+script = ExtResource("1_sh4xl")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=95242730]
+texture = ExtResource("2_wy55s")
+
+[node name="Clickable" parent="." unique_id=1213497317 instance=ExtResource("3_jr17w")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Clickable" unique_id=1674330500]
+shape = SubResource("RectangleShape2D_bhunq")
+
+[node name="WanderComponent" parent="." unique_id=1551637035 node_paths=PackedStringArray("body") instance=ExtResource("4_gdg70")]
+speed = 50.0
+wander_radius = 200.0
+body = NodePath("..")
+
+[node name="HealthComponent" parent="." unique_id=29071247 node_paths=PackedStringArray("clickable") instance=ExtResource("5_pms5r")]
+clickable = NodePath("../Clickable")
+current_health = 1
+max_health = 1
+
+[connection signal="died" from="HealthComponent" to="." method="_on_health_component_died"]

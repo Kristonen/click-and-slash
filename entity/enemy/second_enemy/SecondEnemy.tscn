@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://cn1ag211q0rir"]
+
+[ext_resource type="Script" uid="uid://bmbyqmca2mryq" path="res://entity/enemy/second_enemy/second_enemy.gd" id="1_6gok7"]
+[ext_resource type="Texture2D" uid="uid://bou0hqhnphjn3" path="res://entity/enemy/second_enemy/second_enemy.tres" id="2_hgflm"]
+[ext_resource type="PackedScene" uid="uid://fsmtw2qkffas" path="res://components/HealthComponent.tscn" id="3_g707b"]
+[ext_resource type="PackedScene" uid="uid://cl0q7kg15c3e3" path="res://components/clickable.tscn" id="4_kyeae"]
+[ext_resource type="PackedScene" uid="uid://617n71iflkl3" path="res://components/movment_components/TeleportComponent.tscn" id="5_jxgq2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bhunq"]
+size = Vector2(32, 32)
+
+[node name="SecondEnemy" type="CharacterBody2D" unique_id=1141009094]
+script = ExtResource("1_6gok7")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1678948328]
+texture = ExtResource("2_hgflm")
+
+[node name="HealthComponent" parent="." unique_id=29071247 node_paths=PackedStringArray("clickable") instance=ExtResource("3_g707b")]
+clickable = NodePath("../Clickable")
+current_health = 5
+max_health = 5
+
+[node name="Clickable" parent="." unique_id=1213497317 instance=ExtResource("4_kyeae")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Clickable" unique_id=1004232146]
+shape = SubResource("RectangleShape2D_bhunq")
+
+[node name="TeleportComponent" parent="." unique_id=1331054636 node_paths=PackedStringArray("body") instance=ExtResource("5_jxgq2")]
+body = NodePath("..")
+
+[connection signal="died" from="HealthComponent" to="." method="_on_health_component_died"]

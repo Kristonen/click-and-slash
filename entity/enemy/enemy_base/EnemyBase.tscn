@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://cty70ymii5e8t"]
+
+[ext_resource type="Script" uid="uid://lt0isv1dk88" path="res://entity/enemy/enemy_base/enemy_base.gd" id="1_occwe"]
+[ext_resource type="PackedScene" uid="uid://fsmtw2qkffas" path="res://components/HealthComponent.tscn" id="2_qjx0g"]
+[ext_resource type="PackedScene" uid="uid://cl0q7kg15c3e3" path="res://components/clickable.tscn" id="3_64xwj"]
+[ext_resource type="Texture2D" uid="uid://bewuhyl8n445f" path="res://entity/enemy/first_enemy/first_enemy.tres" id="4_i3uxp"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bhunq"]
+size = Vector2(32, 32)
+
+[node name="EnemyBase" type="CharacterBody2D" unique_id=1782925470]
+script = ExtResource("1_occwe")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2064886047]
+texture = ExtResource("4_i3uxp")
+
+[node name="HealthComponent" parent="." unique_id=29071247 node_paths=PackedStringArray("clickable") instance=ExtResource("2_qjx0g")]
+clickable = NodePath("../Clickable")
+
+[node name="Clickable" parent="." unique_id=1213497317 instance=ExtResource("3_64xwj")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Clickable" unique_id=807911010]
+shape = SubResource("RectangleShape2D_bhunq")
+
+[connection signal="died" from="HealthComponent" to="." method="_on_health_component_died"]
