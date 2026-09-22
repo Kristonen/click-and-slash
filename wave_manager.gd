@@ -1,6 +1,7 @@
 class_name WaveManager
 extends Node
 
+signal wave_started
 signal wave_completed
 
 @export var waves : Array[WaveData]
@@ -10,9 +11,6 @@ signal wave_completed
 
 var current_wave_index : int = 0
 var kill_count : int = 0
-
-func _ready() -> void:
-	start_wave(0)
 
 func start_wave(index : int) -> void:
 	if index >= waves.size():
@@ -34,6 +32,7 @@ func start_wave(index : int) -> void:
 		new_spawner.set_enemy_container(enemy_container)
 		new_spawner.enemy_killed.connect(_on_enemy_killed)
 		new_spawner.start_spawning()
+	wave_started.emit(600)
 			
 func _on_enemy_killed() -> void:
 	kill_count += 1

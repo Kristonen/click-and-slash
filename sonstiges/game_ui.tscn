@@ -2,8 +2,11 @@
 
 [ext_resource type="Script" uid="uid://l3c8mwc36rr1" path="res://sonstiges/game_ui.gd" id="1_ue6oa"]
 
-[node name="CanvasLayer" type="CanvasLayer" unique_id=1997592668]
+[node name="CanvasLayer" type="CanvasLayer" unique_id=1997592668 node_paths=PackedStringArray("coins", "round_time", "round_timer")]
 script = ExtResource("1_ue6oa")
+coins = NodePath("Control/MarginContainer/HBoxContainer/Coins")
+round_time = NodePath("Control/MarginContainer/HBoxContainer2/RoundTime")
+round_timer = NodePath("Control/RoundTimer")
 
 [node name="Control" type="Control" parent="." unique_id=1240370505]
 layout_mode = 3
@@ -26,9 +29,18 @@ theme_override_constants/margin_top = 5
 theme_override_constants/margin_right = 5
 theme_override_constants/margin_bottom = 5
 
+[node name="HBoxContainer2" type="HBoxContainer" parent="Control/MarginContainer" unique_id=1889142223]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="RoundTime" type="Label" parent="Control/MarginContainer/HBoxContainer2" unique_id=1594701417]
+layout_mode = 2
+size_flags_horizontal = 6
+
 [node name="HBoxContainer" type="HBoxContainer" parent="Control/MarginContainer" unique_id=357907915]
 custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
+size_flags_horizontal = 8
 theme_override_constants/separation = 10
 
 [node name="Label" type="Label" parent="Control/MarginContainer/HBoxContainer" unique_id=659230227]
@@ -39,3 +51,6 @@ text = "Coins:"
 [node name="Coins" type="Label" parent="Control/MarginContainer/HBoxContainer" unique_id=1128909325]
 layout_mode = 2
 text = "0"
+
+[node name="RoundTimer" type="Timer" parent="Control" unique_id=2064763162]
+one_shot = true

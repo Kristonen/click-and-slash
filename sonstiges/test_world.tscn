@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://jgi4k8jh4ghu"]
 
+[ext_resource type="Script" uid="uid://qyuctyuf20uj" path="res://sonstiges/level.gd" id="1_7qnik"]
 [ext_resource type="Texture2D" uid="uid://tsen0mx252t1" path="res://sonstiges/ground.tres" id="1_dxppu"]
 [ext_resource type="PackedScene" uid="uid://b64pdtx3olwy3" path="res://entity/Spawner.tscn" id="4_kt6p6"]
 [ext_resource type="PackedScene" uid="uid://8rttip8xj243" path="res://sonstiges/player.tscn" id="5_lf0gk"]
@@ -9,7 +10,10 @@
 [ext_resource type="Script" uid="uid://dpunjaliw1t7f" path="res://wave_data.gd" id="8_x0ppn"]
 [ext_resource type="Resource" uid="uid://ctae5b5hqhrvg" path="res://first_wave.tres" id="9_cqt40"]
 
-[node name="TestWorld" type="Node2D" unique_id=1043288071]
+[node name="TestWorld" type="Node2D" unique_id=1043288071 node_paths=PackedStringArray("game_ui", "wave_manager")]
+script = ExtResource("1_7qnik")
+game_ui = NodePath("CanvasLayer")
+wave_manager = NodePath("WaveManager")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=2001977593]
 position = Vector2(579.49994, 328.00003)

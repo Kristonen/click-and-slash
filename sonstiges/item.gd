@@ -33,11 +33,14 @@ func _physics_process(delta: float) -> void:
 		speed = lerp(speed, max_speed, friction)
 
 func launch() -> void:
-	var target_pos : Vector2 = Vector2(-500, -500)#global_position + Vector2(x, y)
-	while !Utils.check_if_in_viewport(target_pos):	
-		var x : float = randf_range(-100, 100)
-		var y : float = randf_range(-100, 100)
-		target_pos = global_position + Vector2(x, y)
+	var random_offset : Vector2 = Vector2(
+		randf_range(-100, 100),
+		randf_range(-100, 100),
+	)
+	var size : Vector2 = get_viewport().get_visible_rect().size;
+	var target_pos : Vector2 = global_position + random_offset
+	target_pos.x = clampf(target_pos.x, 32, size.x - 32)
+	target_pos.y = clampf(target_pos.y, 32, size.y - 32)
 	var tween : Tween = create_tween().set_parallel(true)
 	tween.tween_property(self, "global_position", target_pos, 0.5)\
 		.set_trans(Tween.TRANS_LINEAR)
