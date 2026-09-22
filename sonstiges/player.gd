@@ -8,7 +8,6 @@ var kills : int
 var coins : int:
 	set(value):
 		coins = value
-		Game.update_coins()
 
 func _physics_process(_delta: float) -> void:
 	global_position = get_global_mouse_position()

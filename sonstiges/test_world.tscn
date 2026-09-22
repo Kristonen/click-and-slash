@@ -10,10 +10,11 @@
 [ext_resource type="Script" uid="uid://dpunjaliw1t7f" path="res://wave_data.gd" id="8_x0ppn"]
 [ext_resource type="Resource" uid="uid://ctae5b5hqhrvg" path="res://first_wave.tres" id="9_cqt40"]
 
-[node name="TestWorld" type="Node2D" unique_id=1043288071 node_paths=PackedStringArray("game_ui", "wave_manager")]
+[node name="TestWorld" type="Node2D" unique_id=1043288071 node_paths=PackedStringArray("game_ui", "wave_manager", "player")]
 script = ExtResource("1_7qnik")
 game_ui = NodePath("CanvasLayer")
 wave_manager = NodePath("WaveManager")
+player = NodePath("Player")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=2001977593]
 position = Vector2(579.49994, 328.00003)

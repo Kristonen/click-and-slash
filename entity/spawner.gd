@@ -51,5 +51,6 @@ func stop_spawning() -> void:
 	
 func _on_enemy_died(enemy : Enemy) -> void:
 	current_amount = max(0, current_amount - 1)
+	Game.enemy_killed.emit(enemy)
 	enemy_killed.emit()
 	
