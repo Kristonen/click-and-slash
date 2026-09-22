@@ -1,8 +1,8 @@
 class_name HealthComponent
-extends Node2D
+extends Node
 
-signal damaged(damage : int)
-signal died
+signal damaged(data : Data)
+signal died()
 
 @export var clickable : Clickable
 @export var current_health : int:
@@ -13,6 +13,8 @@ signal died
 @export var max_health : int
 @export var min_health : int
 
+var last_damage : int
+
 func _ready() -> void:
 	if clickable:
 		clickable.clicked.connect(take_damage)
@@ -20,6 +22,7 @@ func _ready() -> void:
 		push_error("No clickable set in %s", name)
 
 func take_damage(data : Data) -> void:
-	if data is DamageData:
+	if data is ClickData:
+		last_damage = data.damage
 		current_health -= data.damage
-		damaged.emit(data.damage)
+		damaged.emit(data)

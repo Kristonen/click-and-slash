@@ -8,6 +8,7 @@ func _ready() -> void:
 
 func _on_input_event(_viewport : Node, event : InputEvent, _shape_idx : int) -> void:
 	if event is InputEventMouse and event.is_action_pressed("MOUSE_LEFT"):
-		var data : Data = DamageData.new()
+		var data : Data = ClickData.new()
 		data.damage = 1
+		data.pos = global_position
 		clicked.emit(data)

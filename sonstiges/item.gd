@@ -22,7 +22,7 @@ func _ready() -> void:
 	assert(sprite != null, "Sprite not set")
 	collectable.detected_by_collector.connect(_on_detector)
 	collectable.collected.connect(_on_collected)
-	launch_finished.connect(following.check_item_launch_finishded)
+	launch_finished.connect(Game.player.check_item_launch_finishded)
 	speed = start_speed
 	launch()
 	

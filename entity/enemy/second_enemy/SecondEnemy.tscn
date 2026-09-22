@@ -5,6 +5,8 @@
 [ext_resource type="PackedScene" uid="uid://fsmtw2qkffas" path="res://components/HealthComponent.tscn" id="3_g707b"]
 [ext_resource type="PackedScene" uid="uid://cl0q7kg15c3e3" path="res://components/clickable.tscn" id="4_kyeae"]
 [ext_resource type="PackedScene" uid="uid://617n71iflkl3" path="res://components/movment_components/TeleportComponent.tscn" id="5_jxgq2"]
+[ext_resource type="PackedScene" uid="uid://dqxit7j0tmx0o" path="res://components/DropComponent.tscn" id="6_g707b"]
+[ext_resource type="PackedScene" uid="uid://i53kgg4oidjl" path="res://sonstiges/coin.tscn" id="7_kyeae"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bhunq"]
 size = Vector2(32, 32)
@@ -27,5 +29,13 @@ shape = SubResource("RectangleShape2D_bhunq")
 
 [node name="TeleportComponent" parent="." unique_id=1331054636 node_paths=PackedStringArray("body") instance=ExtResource("5_jxgq2")]
 body = NodePath("..")
+
+[node name="DropComponent" parent="." unique_id=1208740868 node_paths=PackedStringArray("clickable", "health_component") instance=ExtResource("6_g707b")]
+item_scene = ExtResource("7_kyeae")
+min_amount = 10
+max_amount = 25
+drop_on_it = true
+clickable = NodePath("../Clickable")
+health_component = NodePath("../HealthComponent")
 
 [connection signal="died" from="HealthComponent" to="." method="_on_health_component_died"]
