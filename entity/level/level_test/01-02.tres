@@ -7,11 +7,12 @@
 
 [sub_resource type="Resource" id="Resource_hs6h8"]
 script = ExtResource("1_4qyb2")
-target_amount = 20
+target_amount = 5
 metadata/_custom_type_script = "uid://ci81lniewumds"
 
 [resource]
 script = ExtResource("1_0oiml")
+wave_number = 2
 wave_spawns = Array[ExtResource("2_0drn5")]([ExtResource("3_0drn5")])
 wave_goal = 10
 goal = SubResource("Resource_hs6h8")

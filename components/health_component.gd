@@ -13,8 +13,6 @@ signal died()
 @export var max_health : int
 @export var min_health : int
 
-var last_damage : int
-
 func _ready() -> void:
 	if clickable:
 		clickable.clicked.connect(take_damage)
@@ -23,6 +21,5 @@ func _ready() -> void:
 
 func take_damage(data : Data) -> void:
 	if data is ClickData:
-		last_damage = data.damage
 		current_health -= data.damage
 		damaged.emit(data)

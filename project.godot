@@ -20,6 +20,7 @@ config/icon="res://sonstiges/icon.svg"
 
 Game="*uid://cncbys3ydt7nc"
 Utils="*uid://dnm3y2s8fo00c"
+Event="*uid://bt4lcsemfsp65"
 
 [debug]
 

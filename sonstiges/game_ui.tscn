@@ -2,11 +2,12 @@
 
 [ext_resource type="Script" uid="uid://l3c8mwc36rr1" path="res://sonstiges/game_ui.gd" id="1_ue6oa"]
 
-[node name="CanvasLayer" type="CanvasLayer" unique_id=1997592668 node_paths=PackedStringArray("coins", "round_time", "round_timer", "goal", "desc")]
+[node name="CanvasLayer" type="CanvasLayer" unique_id=1997592668 node_paths=PackedStringArray("coins", "round_time", "round_timer", "wave_number", "goal", "desc")]
 script = ExtResource("1_ue6oa")
 coins = NodePath("Control/MarginContainer/HBoxContainer/Coins")
 round_time = NodePath("Control/MarginContainer/HBoxContainer2/RoundTime")
 round_timer = NodePath("Control/RoundTimer")
+wave_number = NodePath("Control/MarginContainer/Label")
 goal = NodePath("Control/MarginContainer/HBoxContainer2/Goal")
 desc = NodePath("Control/MarginContainer/HBoxContainer2/Desc")
 
@@ -30,6 +31,11 @@ theme_override_constants/margin_left = 5
 theme_override_constants/margin_top = 5
 theme_override_constants/margin_right = 5
 theme_override_constants/margin_bottom = 5
+
+[node name="Label" type="Label" parent="Control/MarginContainer" unique_id=1666282538]
+layout_mode = 2
+size_flags_horizontal = 0
+text = "Wave: "
 
 [node name="HBoxContainer2" type="VBoxContainer" parent="Control/MarginContainer" unique_id=565835467]
 layout_mode = 2

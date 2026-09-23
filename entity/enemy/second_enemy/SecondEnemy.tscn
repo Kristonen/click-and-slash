@@ -11,8 +11,9 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bhunq"]
 size = Vector2(32, 32)
 
-[node name="SecondEnemy" type="CharacterBody2D" unique_id=1141009094]
+[node name="SecondEnemy" type="CharacterBody2D" unique_id=1141009094 node_paths=PackedStringArray("health_component")]
 script = ExtResource("1_6gok7")
+health_component = NodePath("HealthComponent")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1678948328]
 texture = ExtResource("2_hgflm")
@@ -37,5 +38,3 @@ max_amount = 25
 drop_on_it = true
 clickable = NodePath("../Clickable")
 health_component = NodePath("../HealthComponent")
-
-[connection signal="died" from="HealthComponent" to="." method="_on_health_component_died"]

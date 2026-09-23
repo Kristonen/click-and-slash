@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="WaveData" format=3 uid="uid://btx4wpo02vcyu"]
+
+[ext_resource type="Script" uid="uid://cefb1p4xha8ei" path="res://resources/quest/kill_goal.gd" id="1_m2bw5"]
+[ext_resource type="Script" uid="uid://dpunjaliw1t7f" path="res://wave_data.gd" id="2_cohqd"]
+[ext_resource type="Script" uid="uid://b4f1i2hp7a62a" path="res://resources/spawn_data/spawner_details.gd" id="3_wisfh"]
+[ext_resource type="Resource" uid="uid://bdaqfqnxxcup5" path="res://first_enemy.tres" id="4_8wbjs"]
+[ext_resource type="Resource" uid="uid://cjk4c7q6sx4vg" path="res://second_enemy.tres" id="5_acrk3"]
+
+[sub_resource type="Resource" id="Resource_hs6h8"]
+script = ExtResource("1_m2bw5")
+target_amount = 5
+metadata/_custom_type_script = "uid://cefb1p4xha8ei"
+
+[resource]
+script = ExtResource("2_cohqd")
+wave_number = 5
+wave_spawns = Array[ExtResource("3_wisfh")]([ExtResource("4_8wbjs"), ExtResource("5_acrk3")])
+wave_goal = 5
+goal = SubResource("Resource_hs6h8")
+metadata/_custom_type_script = "uid://dpunjaliw1t7f"

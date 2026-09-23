@@ -5,6 +5,7 @@ extends CanvasLayer
 
 @export var round_time : Label
 @export var round_timer : Timer
+@export var wave_number : Label
 @export var goal : Label
 @export var desc : Label
 
@@ -26,6 +27,7 @@ func set_new_wave(wave : WaveData) -> void:
 		desc.text = "Eliminate %d enemies!" % wave.goal.target_amount
 	elif wave.goal is CollectGoal:
 		desc.text = "Collect %d coins!" % wave.goal.target_amount
+	wave_number.text = "Wave: %d" % wave.wave_number
 
 func update_goal(current : int, target : int) -> void:
 	if !goal: return
