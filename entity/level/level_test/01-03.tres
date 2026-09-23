@@ -13,7 +13,6 @@ metadata/_custom_type_script = "uid://cefb1p4xha8ei"
 
 [resource]
 script = ExtResource("2_nbg54")
-wave_number = 3
 wave_spawns = Array[ExtResource("3_8l2cp")]([ExtResource("4_dm6ea"), ExtResource("5_hqyet")])
 wave_goal = 5
 goal = SubResource("Resource_hs6h8")

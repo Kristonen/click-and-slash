@@ -18,6 +18,7 @@ func start_wave(index : int) -> void:
 		return
 	
 	var current_wave : WaveData = waves[index]
+	current_wave.wave_number = index + 1
 	
 	for child : Node in spawn_container.get_children():
 		child.queue_free()
