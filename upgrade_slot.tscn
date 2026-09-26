@@ -5,6 +5,7 @@
 [node name="UpgradeSlot" type="PanelContainer" unique_id=2145875425 node_paths=PackedStringArray("apply_btn", "upgrade_name", "upgrade_desc")]
 process_mode = 2
 custom_minimum_size = Vector2(200, 300)
+custom_maximum_size = Vector2(200, 300)
 offset_right = 200.0
 offset_bottom = 304.0
 script = ExtResource("1_1wldy")
@@ -40,6 +41,7 @@ custom_minimum_size = Vector2(0, 100)
 layout_mode = 2
 text = "TEST"
 vertical_alignment = 1
+autowrap_mode = 3
 
 [node name="Button" type="Button" parent="MarginContainer/VBoxContainer" unique_id=638553055]
 layout_mode = 2

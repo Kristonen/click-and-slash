@@ -4,6 +4,8 @@
 [ext_resource type="Script" uid="uid://cnwf0q7om3tss" path="res://upgrade_ui.gd" id="1_x60vi"]
 [ext_resource type="Script" uid="uid://rl7ghiwbpap7" path="res://resources/upgrade/upgrade_data.gd" id="2_yuo2f"]
 [ext_resource type="Resource" uid="uid://041vpmdoyxv4" path="res://resources/upgrade/upgrade_dmg_flat.tres" id="3_15enb"]
+[ext_resource type="Resource" uid="uid://cy3v26w2w7d1y" path="res://resources/upgrade/upgrade_dmg_per.tres" id="4_15enb"]
+[ext_resource type="Resource" uid="uid://da61qf4rqq0ij" path="res://resources/upgrade/upgrade_coin_flat.tres" id="5_uh76y"]
 
 [node name="UpgradeUI" type="Control" unique_id=1087351971 node_paths=PackedStringArray("upgrade_slots")]
 layout_mode = 3
@@ -13,7 +15,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_x60vi")
-avaiable_upgrades = Array[ExtResource("2_yuo2f")]([ExtResource("3_15enb")])
+avaiable_upgrades = Array[ExtResource("2_yuo2f")]([ExtResource("3_15enb"), ExtResource("4_15enb"), ExtResource("5_uh76y")])
 upgrade_slots = [NodePath("CenterContainer/HBoxContainer/UpgradeSlot"), NodePath("CenterContainer/HBoxContainer/UpgradeSlot1"), NodePath("CenterContainer/HBoxContainer/UpgradeSlot2")]
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1731846500]

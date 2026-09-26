@@ -6,9 +6,10 @@ extends Control
 
 
 func _ready() -> void:
-	var upgrade_data : UpgradeData = avaiable_upgrades[0]
 	for slot : UpgradeSlot in upgrade_slots:
-		slot.set_upgrade(upgrade_data)
+		var random_number : int = randi_range(0, avaiable_upgrades.size() - 1)
+		var data : UpgradeData = avaiable_upgrades[random_number]
+		slot.set_upgrade(data)
 		slot.upgrade_applied.connect(_on_applied_upgrade)
 
 func _on_applied_upgrade() -> void:

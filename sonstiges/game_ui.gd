@@ -16,8 +16,8 @@ func _process(_delta: float) -> void:
 		var seconds : int = total_second % 60
 		round_time.text = "%d:%02d" % [minutes, seconds]
 
-func update_coins(value : int) -> void:
-	coins.text = str(value)
+func update_coins(value : float) -> void:
+	coins.text = "%00d" % value
 
 func start_round(time : float) -> void:
 	round_timer.start(time)

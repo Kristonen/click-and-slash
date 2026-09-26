@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="UpgradeDataCoinValueFlat" format=3 uid="uid://da61qf4rqq0ij"]
+
+[ext_resource type="Script" uid="uid://ceyl20j58jccq" path="res://resources/upgrade/upgrade_data_coin_value_flat.gd" id="1_agxon"]
+
+[resource]
+script = ExtResource("1_agxon")
+value = 2.0
+upgrade_name = "More Coin value"
+upgrade_desc = "increase the value of collected coins by 2."
+metadata/_custom_type_script = "uid://ceyl20j58jccq"

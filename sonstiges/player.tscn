@@ -11,8 +11,11 @@ radius = 3.0
 [sub_resource type="CircleShape2D" id="CircleShape2D_riqys"]
 radius = 81.3019
 
-[node name="Player" type="Node2D" unique_id=893300391]
+[node name="Player" type="Node2D" unique_id=893300391 node_paths=PackedStringArray("collector", "detector", "stats_manager")]
 script = ExtResource("1_4flbx")
+collector = NodePath("Collector")
+detector = NodePath("Detector")
+stats_manager = NodePath("StatsManager")
 
 [node name="Collector" parent="." unique_id=1284946241 instance=ExtResource("2_onrkg")]
 

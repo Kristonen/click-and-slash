@@ -15,11 +15,18 @@ extends Node
 @export var base_crit_change : float
 @export var extra_crit_flat_chance : float
 
+@export_group("Coin Value")
+@export var extra_coin_flat : float
+@export var extra_coin_percantage : float
+
 func add_flat_damage(extra : float) -> void:
 	extra_damage_flat += extra
 	
 func add_percentage_damage(extra : float) -> void:
 	extra_damage_percentage += extra
+	
+func add_flat_coin(extra : float) -> void:
+	extra_coin_flat += extra
 
 func get_damage() -> float:
 	return (base_damage + extra_damage_flat) * (1 + extra_damage_percentage)
@@ -29,3 +36,6 @@ func get_crit_dmg() -> float:
 
 func get_crit_chance() -> float:
 	return base_crit_change + extra_crit_flat_chance
+	
+func get_coin_value(base_value : float) -> float:
+	return base_value + extra_coin_flat * (1 + extra_coin_percantage)

@@ -1,9 +1,11 @@
 class_name Collector
 extends Area2D
 
+signal collected(item : Item)
+
 func _ready() -> void:
 	area_entered.connect(_on_area_entered)
 
 func _on_area_entered(area : Area2D) -> void:
 	if area is Collectable:
-		area.collected.emit()
+		area.collected.emit(self)

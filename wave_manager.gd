@@ -49,7 +49,7 @@ func finish_wave() -> void:
 	print_debug("NÄCHSTE WELLE")
 	current_wave_index += 1
 	current_wave.goal.cleanup_listeners()
-	if current_wave.wave_number % 2 == 0:
+	if current_wave.wave_number % 1 == 0:
 		print_debug("UPGRADE TIME!")
 		get_tree().paused = true
 		var upgrade_ui : UpgradeUI = upgrade_ui_scene.instantiate()

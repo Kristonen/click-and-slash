@@ -61,7 +61,7 @@ func _on_detector() -> void:
 	if !is_collectable: return
 	following = Game.level.player
 
-func _on_collected() -> void:
+func _on_collected(collector : Collector) -> void:
 	if !is_collectable: return
-	Event.item_collected.emit(self)
+	collector.collected.emit(self)
 	queue_free()
