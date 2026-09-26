@@ -1,25 +1,17 @@
 class_name HealthComponent
 extends Node
 
-signal damaged(data : Data)
+signal damaged(dmg : int)
 signal died()
 
-@export var clickable : Clickable
-@export var current_health : int:
+@export var current_health : float:
 	set(value):
 		current_health = value
 		if current_health <= min_health:
 			died.emit()
-@export var max_health : int
-@export var min_health : int
+@export var max_health : float
+@export var min_health : float
 
-func _ready() -> void:
-	if clickable:
-		clickable.clicked.connect(take_damage)
-	else:
-		push_error("No clickable set in %s", name)
-
-func take_damage(data : Data) -> void:
-	if data is ClickData:
-		current_health -= data.damage
-		damaged.emit(data)
+func take_damage(damage : float) -> void:
+	current_health -= damage
+	damaged.emit(damage)

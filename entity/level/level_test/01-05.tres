@@ -16,4 +16,5 @@ script = ExtResource("2_cohqd")
 wave_spawns = Array[ExtResource("3_wisfh")]([ExtResource("4_8wbjs"), ExtResource("5_acrk3")])
 wave_goal = 5
 goal = SubResource("Resource_hs6h8")
+wave_time = 300
 metadata/_custom_type_script = "uid://dpunjaliw1t7f"

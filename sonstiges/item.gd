@@ -58,10 +58,10 @@ func _on_launch_finished() -> void:
 	launch_finished.emit(self)
 
 func _on_detector() -> void:
-	if is_collectable: 
-		following = Game.level.player
+	if !is_collectable: return
+	following = Game.level.player
 
 func _on_collected() -> void:
-	if is_collectable:
-		Game.item_collected.emit(self)
-		queue_free()
+	if !is_collectable: return
+	Event.item_collected.emit(self)
+	queue_free()

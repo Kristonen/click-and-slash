@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://ct7wgaxakuf3u" path="res://sonstiges/player.gd" id="1_4flbx"]
 [ext_resource type="PackedScene" uid="uid://cs8l7kxnveuh7" path="res://components/collector.tscn" id="2_onrkg"]
 [ext_resource type="PackedScene" uid="uid://55a1uodmvxuy" path="res://components/detector.tscn" id="3_i3pqv"]
+[ext_resource type="PackedScene" uid="uid://bnqlkdqkygwyd" path="res://components/StatsManager.tscn" id="4_upb80"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_bhunq"]
 radius = 3.0
@@ -22,3 +23,6 @@ shape = SubResource("CircleShape2D_bhunq")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Detector" unique_id=182335735]
 shape = SubResource("CircleShape2D_riqys")
+
+[node name="StatsManager" parent="." unique_id=318261826 instance=ExtResource("4_upb80")]
+base_damage = 5.0

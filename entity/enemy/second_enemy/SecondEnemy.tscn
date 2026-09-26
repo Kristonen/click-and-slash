@@ -11,17 +11,17 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bhunq"]
 size = Vector2(32, 32)
 
-[node name="SecondEnemy" type="CharacterBody2D" unique_id=1141009094 node_paths=PackedStringArray("health_component")]
+[node name="SecondEnemy" type="CharacterBody2D" unique_id=1141009094 node_paths=PackedStringArray("health_component", "clickable")]
 script = ExtResource("1_6gok7")
 health_component = NodePath("HealthComponent")
+clickable = NodePath("Clickable")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1678948328]
 texture = ExtResource("2_hgflm")
 
-[node name="HealthComponent" parent="." unique_id=29071247 node_paths=PackedStringArray("clickable") instance=ExtResource("3_g707b")]
-clickable = NodePath("../Clickable")
-current_health = 5
-max_health = 5
+[node name="HealthComponent" parent="." unique_id=29071247 instance=ExtResource("3_g707b")]
+current_health = 25.0
+max_health = 25.0
 
 [node name="Clickable" parent="." unique_id=1213497317 instance=ExtResource("4_kyeae")]
 
@@ -35,6 +35,6 @@ body = NodePath("..")
 item_scene = ExtResource("7_kyeae")
 min_amount = 10
 max_amount = 25
-drop_on_it = true
+drop_on_click = true
 clickable = NodePath("../Clickable")
 health_component = NodePath("../HealthComponent")

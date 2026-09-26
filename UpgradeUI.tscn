@@ -1,0 +1,53 @@
+[gd_scene format=3 uid="uid://ducccghvlt0ll"]
+
+[ext_resource type="PackedScene" uid="uid://ibhassoi7x83" path="res://upgrade_slot.tscn" id="1_1c6tr"]
+[ext_resource type="Script" uid="uid://cnwf0q7om3tss" path="res://upgrade_ui.gd" id="1_x60vi"]
+[ext_resource type="Script" uid="uid://rl7ghiwbpap7" path="res://resources/upgrade/upgrade_data.gd" id="2_yuo2f"]
+[ext_resource type="Resource" uid="uid://041vpmdoyxv4" path="res://resources/upgrade/upgrade_dmg_flat.tres" id="3_15enb"]
+
+[node name="UpgradeUI" type="Control" unique_id=1087351971 node_paths=PackedStringArray("upgrade_slots")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_x60vi")
+avaiable_upgrades = Array[ExtResource("2_yuo2f")]([ExtResource("3_15enb")])
+upgrade_slots = [NodePath("CenterContainer/HBoxContainer/UpgradeSlot"), NodePath("CenterContainer/HBoxContainer/UpgradeSlot1"), NodePath("CenterContainer/HBoxContainer/UpgradeSlot2")]
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1731846500]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.39215687)
+
+[node name="CenterContainer" type="CenterContainer" parent="." unique_id=534789231]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer" unique_id=1091664893]
+layout_mode = 2
+theme_override_constants/separation = 50
+
+[node name="UpgradeSlot" parent="CenterContainer/HBoxContainer" unique_id=2145875425 instance=ExtResource("1_1c6tr")]
+layout_mode = 2
+
+[node name="UpgradeSlot1" parent="CenterContainer/HBoxContainer" unique_id=1042785831 instance=ExtResource("1_1c6tr")]
+layout_mode = 2
+
+[node name="UpgradeSlot2" parent="CenterContainer/HBoxContainer" unique_id=381114878 instance=ExtResource("1_1c6tr")]
+layout_mode = 2

@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="UpgradeDataDamageFlat" format=3 uid="uid://041vpmdoyxv4"]
+
+[ext_resource type="Script" uid="uid://c8p5ylhswcyc8" path="res://resources/upgrade/upgrade_data_damage_flat.gd" id="1_t25km"]
+
+[resource]
+script = ExtResource("1_t25km")
+value = 5.0
+upgrade_name = "More Damage"
+upgrade_desc = "Increase the damage by 5."
+metadata/_custom_type_script = "uid://c8p5ylhswcyc8"

@@ -2,8 +2,8 @@ class_name Player extends Node2D
 
 @onready var collector: Collector = $Collector
 @onready var detector: Detector = $Detector
+@onready var stats_manager: StatsManager = $StatsManager
 
-var kills : int
 
 var coins : int:
 	set(value):
