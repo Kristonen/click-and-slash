@@ -12,6 +12,9 @@
 [ext_resource type="Resource" uid="uid://trs403c1v6gc" path="res://entity/level/level_test/01-03.tres" id="9_p3fkl"]
 [ext_resource type="Resource" uid="uid://b2cgqamipnosk" path="res://entity/level/level_test/01-04.tres" id="10_p3fkl"]
 [ext_resource type="Resource" uid="uid://btx4wpo02vcyu" path="res://entity/level/level_test/01-05.tres" id="11_vefcy"]
+[ext_resource type="Script" uid="uid://b4f1i2hp7a62a" path="res://resources/spawn_data/spawner_details.gd" id="13_ilitt"]
+[ext_resource type="Resource" uid="uid://bdaqfqnxxcup5" path="res://first_enemy.tres" id="14_ta1ui"]
+[ext_resource type="Resource" uid="uid://cjk4c7q6sx4vg" path="res://second_enemy.tres" id="15_hn0po"]
 
 [node name="TestWorld" type="Node2D" unique_id=1043288071 node_paths=PackedStringArray("game_ui", "wave_manager", "player")]
 script = ExtResource("1_7qnik")
@@ -41,3 +44,4 @@ waves = Array[ExtResource("8_x0ppn")]([ExtResource("9_cqt40"), ExtResource("8_cq
 spawn_container = NodePath("../Node")
 enemy_container = NodePath("../Enemies")
 spawner_scene = ExtResource("4_kt6p6")
+spawn_data = Array[ExtResource("13_ilitt")]([ExtResource("14_ta1ui"), ExtResource("15_hn0po")])

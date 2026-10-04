@@ -8,6 +8,7 @@ signal wave_started
 @export var spawn_container : Node
 @export var enemy_container : Node
 @export var spawner_scene : PackedScene
+@export var spawn_data : Array[SpawnData]
 
 var upgrade_ui_scene : PackedScene = preload("uid://ducccghvlt0ll")
 
@@ -17,6 +18,13 @@ var kill_count : int = 0
 func _ready() -> void:
 	for i : int in range(waves.size()):
 		waves[i].wave_number = i + 1
+		
+	for spawns : SpawnData in spawn_data:
+		var new_spawner : Spawner = spawner_scene.instantiate()
+		spawn_container.add_child(new_spawner)
+		new_spawner.set_new_spawn(spawns)
+		new_spawner.set_enemy_container(enemy_container)
+		wave_prepared.connect(new_spawner.new_wave_started)
 
 func start_wave(index : int) -> void:
 	if index >= waves.size():
@@ -26,21 +34,19 @@ func start_wave(index : int) -> void:
 	var current_wave : WaveData = waves[index]
 	
 	for child : Node in spawn_container.get_children():
-		child.queue_free()
+		if child is not Spawner: break
+		child = child as Spawner
+		if child.is_active:
+			child.max_amount += child.data.increase_per_wave
+		if child.data.required_wave == current_wave.wave_number:
+			child.start_spawning()
 	
-	for enemy : Node in enemy_container.get_children():
-		enemy.queue_free()
-		
+	
 	current_wave.goal.setup_listeners()
 	current_wave.goal.completed.connect(finish_wave)
 	current_wave.goal.initialize()
 	wave_prepared.emit(current_wave)
-	for spawn_data : SpawnData in current_wave.wave_spawns:
-		var new_spawner : Spawner = spawner_scene.instantiate()
-		spawn_container.add_child(new_spawner)
-		new_spawner.set_new_spawn(spawn_data)
-		new_spawner.set_enemy_container(enemy_container)
-		new_spawner.start_spawning()
+	
 	current_wave.goal.add_progress(0)
 	wave_started.emit(current_wave.wave_time)
 		

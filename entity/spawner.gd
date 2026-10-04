@@ -1,12 +1,17 @@
 class_name Spawner
 extends Node
 
-@export var data : SpawnData
+@export var data : SpawnData:
+	set(value):
+		data = value
+		max_amount = data.max_amount
 @export var enemy_container : Node2D
 
 @onready var timer: Timer = $Timer
 
 var current_amount : int
+var max_amount : int
+var is_active : bool
 
 func _ready() -> void:
 	timer.timeout.connect(_on_timout_spawner)
@@ -15,7 +20,7 @@ func _ready() -> void:
 	timer.wait_time = data.spawn_interval
 
 func _on_timout_spawner() -> void:
-	if current_amount < data.max_amount:
+	if current_amount < max_amount:
 		spawn()
 		
 func spawn() -> void:
@@ -40,11 +45,22 @@ func set_enemy_container(node : Node2D) -> void:
 	enemy_container = node
 
 func start_spawning() -> void:
+	is_active = true
 	timer.start()
 
 func stop_spawning() -> void:
 	timer.stop()
+
+func new_wave_started(wave : WaveData) -> void:
+	if wave.wave_number == data.required_wave: 
+		is_active = true
+		return
+		
+	if !is_active: return
 	
+	max_amount += data.increase_per_wave
+	
+
 func _on_enemy_died(enemy : Enemy) -> void:
 	current_amount = max(0, current_amount - 1)
 	Event.enemy_killed.emit(enemy)

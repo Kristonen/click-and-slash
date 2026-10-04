@@ -2,9 +2,6 @@
 
 [ext_resource type="Script" uid="uid://cefb1p4xha8ei" path="res://resources/quest/kill_goal.gd" id="1_315nn"]
 [ext_resource type="Script" uid="uid://dpunjaliw1t7f" path="res://wave_data.gd" id="2_nbg54"]
-[ext_resource type="Script" uid="uid://b4f1i2hp7a62a" path="res://resources/spawn_data/spawner_details.gd" id="3_8l2cp"]
-[ext_resource type="Resource" uid="uid://bdaqfqnxxcup5" path="res://first_enemy.tres" id="4_dm6ea"]
-[ext_resource type="Resource" uid="uid://cjk4c7q6sx4vg" path="res://second_enemy.tres" id="5_hqyet"]
 
 [sub_resource type="Resource" id="Resource_hs6h8"]
 script = ExtResource("1_315nn")
@@ -13,7 +10,6 @@ metadata/_custom_type_script = "uid://cefb1p4xha8ei"
 
 [resource]
 script = ExtResource("2_nbg54")
-wave_spawns = Array[ExtResource("3_8l2cp")]([ExtResource("4_dm6ea"), ExtResource("5_hqyet")])
 wave_goal = 5
 goal = SubResource("Resource_hs6h8")
 wave_time = 300

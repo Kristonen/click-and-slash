@@ -5,4 +5,5 @@ extends Resource
 @export var max_amount : int
 @export var spawn_interval : float
 
-var current_amount : int = 0
+@export var required_wave : int
+@export var increase_per_wave : int
