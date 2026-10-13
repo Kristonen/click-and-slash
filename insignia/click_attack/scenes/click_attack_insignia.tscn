@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://cy2qpvcj7bnn5"]
+
+[ext_resource type="Script" uid="uid://ed2qph6ggfeu" path="res://insignia/click_attack/scenes/click_attack_insignia.gd" id="1_hqqa4"]
+
+[node name="ClickInsigniaAttack" type="Node2D" unique_id=716734062]
+script = ExtResource("1_hqqa4")

@@ -6,8 +6,8 @@
 [resource]
 script = ExtResource("1_28kev")
 enemy_scene = ExtResource("1_3xf1v")
-max_amount = 5
-spawn_interval = 2.0
+max_amount = 20
+spawn_interval = 0.1
 required_wave = 1
 increase_per_wave = 5
 metadata/_custom_type_script = "uid://b4f1i2hp7a62a"

@@ -37,16 +37,18 @@ folder_colors={
 "res://components/": "blue",
 "res://entity/": "red",
 "res://entity/enemy/": "red",
+"res://insignia/": "purple",
 "res://resources/": "green",
 "res://scripts/": "teal",
 "res://sonstiges/": "gray",
-"res://ui/": "orange"
+"res://ui/": "orange",
+"res://upgrade/": "yellow"
 }
 
 [global_group]
 
-Enemies=""
 player=""
+enemy=""
 
 [input]
 

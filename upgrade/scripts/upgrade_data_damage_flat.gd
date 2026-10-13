@@ -3,6 +3,6 @@ extends UpgradeData
 
 @export var value : float
 
-func apply(stats : StatsManager) -> void:
-	stats.add_flat_damage(value)
+func apply(player : Player) -> void:
+	player.stats_manager.add_flat_damage(value)
 	

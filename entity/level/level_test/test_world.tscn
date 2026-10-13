@@ -15,13 +15,14 @@
 [ext_resource type="Script" uid="uid://b4f1i2hp7a62a" path="res://scripts/spawner_details.gd" id="13_5c86e"]
 [ext_resource type="Resource" uid="uid://bdaqfqnxxcup5" path="res://resources/spawn_data/first_enemy.tres" id="14_uqy65"]
 [ext_resource type="Resource" uid="uid://cjk4c7q6sx4vg" path="res://resources/spawn_data/second_enemy.tres" id="15_ivs8i"]
-[ext_resource type="PackedScene" uid="uid://ducccghvlt0ll" path="res://ui/upgrade_ui.tscn" id="16_mwttf"]
+[ext_resource type="PackedScene" uid="uid://db8d4srjoskj6" path="res://ui/upgrade_ui.tscn" id="16_mwttf"]
 
 [node name="TestWorld" type="Node2D" unique_id=1043288071 node_paths=PackedStringArray("game_ui", "wave_manager", "player")]
 script = ExtResource("1_4h1qx")
 game_ui = NodePath("CanvasLayer")
 wave_manager = NodePath("WaveManager")
 player = NodePath("Player")
+upgrade_ui_scene = ExtResource("16_mwttf")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=2001977593]
 position = Vector2(579.49994, 328.00003)
@@ -38,12 +39,11 @@ y_sort_enabled = true
 
 [node name="CanvasLayer" parent="." unique_id=1997592668 instance=ExtResource("4_e80ia")]
 
-[node name="Node" type="Node" parent="." unique_id=197126794]
+[node name="Spawners" type="Node" parent="." unique_id=197126794]
 
 [node name="WaveManager" parent="." unique_id=1529627074 node_paths=PackedStringArray("spawn_container", "enemy_container") instance=ExtResource("5_4ctag")]
 waves = Array[ExtResource("6_sd5f4")]([ExtResource("7_4h1qx"), ExtResource("8_mwttf"), ExtResource("9_bq75g"), ExtResource("10_e80ia"), ExtResource("11_4ctag")])
-spawn_container = NodePath("../Node")
+spawn_container = NodePath("../Spawners")
 enemy_container = NodePath("../Enemies")
 spawner_scene = ExtResource("12_4h1qx")
 spawn_data = Array[ExtResource("13_5c86e")]([ExtResource("14_uqy65"), ExtResource("15_ivs8i")])
-upgrade_ui_scene = ExtResource("16_mwttf")

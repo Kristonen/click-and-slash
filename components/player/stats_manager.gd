@@ -2,7 +2,6 @@ class_name StatsManager
 extends Node
 
 @export_group("DAMAGE")
-@export var base_damage : float
 @export var extra_damage_flat : float
 @export var extra_damage_percentage : float
 
@@ -28,11 +27,11 @@ func add_percentage_damage(extra : float) -> void:
 func add_flat_coin(extra : float) -> void:
 	extra_coin_flat += extra
 
-func get_damage() -> float:
+func get_damage(base_damage : float) -> float:
 	return (base_damage + extra_damage_flat) * (1 + extra_damage_percentage)
 
-func get_crit_dmg() -> float:
-	return base_damage + base_crit_dmg + extra_crit_flat_dmg * (1 + extra_crit_percentage_dmg)
+func get_crit_dmg(base_damage : float) -> float:
+	return (get_damage(base_damage) + base_crit_dmg + extra_crit_flat_dmg) * (1 + extra_crit_percentage_dmg)
 
 func get_crit_chance() -> float:
 	return base_crit_change + extra_crit_flat_chance

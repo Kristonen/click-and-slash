@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="OrbitalAttackData" format=3 uid="uid://b3lc3svbmryoc"]
+
+[ext_resource type="PackedScene" uid="uid://njrhik1pxb46" path="res://entity/projectile/Projectile.tscn" id="1_4ivcb"]
+[ext_resource type="Script" uid="uid://c58275slq8evd" path="res://insignia/auto_attack/scripts/orbital_attack_data.gd" id="1_do8y6"]
+[ext_resource type="PackedScene" uid="uid://baulpgj41xiao" path="res://insignia/auto_attack/scenes/orbital_insignia.tscn" id="2_a6oc1"]
+
+[resource]
+script = ExtResource("1_do8y6")
+projectil_scene = ExtResource("1_4ivcb")
+radius = 50.0
+amount = 5
+speed = 3.0
+display_name = "Orbital"
+scene = ExtResource("2_a6oc1")
+metadata/_custom_type_script = "uid://c58275slq8evd"

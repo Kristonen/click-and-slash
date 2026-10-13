@@ -24,6 +24,8 @@ current_health = 25.0
 max_health = 25.0
 
 [node name="Clickable" parent="." unique_id=1213497317 instance=ExtResource("4_kyeae")]
+collision_layer = 2
+collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Clickable" unique_id=1004232146]
 shape = SubResource("RectangleShape2D_bhunq")

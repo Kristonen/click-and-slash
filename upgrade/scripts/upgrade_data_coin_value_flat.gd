@@ -3,5 +3,5 @@ extends UpgradeData
 
 @export var value : float
 
-func apply(stats : StatsManager) -> void:
-	stats.add_flat_coin(value)
+func apply(player : Player) -> void:
+	player.stats_manager.add_flat_coin(value)

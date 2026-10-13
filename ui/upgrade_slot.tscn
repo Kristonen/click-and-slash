@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://bapldscetlpay" path="res://ui/upgrade_slot.gd" id="1_f4bm7"]
 
 [node name="UpgradeSlot" type="PanelContainer" unique_id=1830483763 node_paths=PackedStringArray("apply_btn", "upgrade_name", "upgrade_desc")]
+process_mode = 2
 custom_minimum_size = Vector2(200, 200)
 offset_right = 40.0
 offset_bottom = 40.0

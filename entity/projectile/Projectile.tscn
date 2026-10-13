@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://njrhik1pxb46"]
+
+[ext_resource type="Texture2D" uid="uid://bj6hdoq2157p8" path="res://entity/projectile/projectile.tres" id="1_lbx3g"]
+[ext_resource type="Script" uid="uid://q10tn76ckhba" path="res://entity/projectile/projectile.gd" id="1_wnarb"]
+[ext_resource type="PackedScene" uid="uid://blvm2e147rnf3" path="res://components/hitbox.tscn" id="3_xqf4v"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bhunq"]
+size = Vector2(16, 16)
+
+[node name="Projectile" type="Node2D" unique_id=1879117376]
+script = ExtResource("1_wnarb")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1249936426]
+texture = ExtResource("1_lbx3g")
+
+[node name="Hitbox" parent="." unique_id=1628830957 instance=ExtResource("3_xqf4v")]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox" unique_id=1106346228]
+shape = SubResource("RectangleShape2D_bhunq")

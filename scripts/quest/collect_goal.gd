@@ -7,5 +7,5 @@ func setup_listeners() -> void:
 func cleanup_listeners() -> void:
 	Event.item_collected.disconnect(_on_item_collected)
 
-func _on_item_collected() -> void:
+func _on_item_collected(_item : Item) -> void:
 	add_progress()

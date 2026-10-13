@@ -14,7 +14,6 @@ func _ready() -> void:
 	get_random_wander_pos()
 
 func _physics_process(_delta: float) -> void:
-	if not body: return
 	if body.global_position.distance_to(wander_pos) < 5:
 		body.velocity = Vector2.ZERO
 		get_random_wander_pos()

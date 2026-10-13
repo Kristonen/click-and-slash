@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://dkcrjw41eo0le"]
+
+[ext_resource type="Script" uid="uid://b7lbm8kfdqq6r" path="res://entity/enemy/health_bar.gd" id="1_50cmx"]
+
+[node name="HealthBar" type="ProgressBar" unique_id=668596064]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+show_percentage = false
+script = ExtResource("1_50cmx")

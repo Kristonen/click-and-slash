@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="UpgradeOrbitalAmount" format=3 uid="uid://b01xtw6r77ywp"]
+
+[ext_resource type="Script" uid="uid://di4wxhkjrnq3m" path="res://insignia/auto_attack/scenes/orbital_insignia.gd" id="1_kmk8n"]
+[ext_resource type="Script" uid="uid://86dyqqpxa47j" path="res://upgrade/orbital/upgrade_orbital_amount.gd" id="2_vx815"]
+
+[resource]
+script = ExtResource("2_vx815")
+amount = 1
+upgrade_name = "Orbital"
+upgrade_desc = "Add 1 projectile"
+required = ExtResource("1_kmk8n")
+metadata/_custom_type_script = "uid://86dyqqpxa47j"

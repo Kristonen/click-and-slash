@@ -27,8 +27,8 @@ func spawn() -> void:
 	var x : float = randf_range(16, size.x - 16)
 	var y : float = randf_range(16, size.y - 16)
 	enemy.died.connect(_on_enemy_died)
-	enemy_container.add_child(enemy)
 	enemy.global_position = Vector2(x, y)
+	enemy_container.add_child(enemy)
 	current_amount += 1
 
 func set_new_spawn(new_data : SpawnData) -> void:

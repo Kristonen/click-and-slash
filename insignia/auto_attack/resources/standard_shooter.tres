@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ShooterAttackData" format=3 uid="uid://nevf7gnia4ea"]
+
+[ext_resource type="PackedScene" uid="uid://njrhik1pxb46" path="res://entity/projectile/Projectile.tscn" id="1_xasx8"]
+[ext_resource type="PackedScene" uid="uid://tnndqaclfpe1" path="res://insignia/auto_attack/scenes/shooter_insignia.tscn" id="2_u0wlu"]
+[ext_resource type="Script" uid="uid://djbinl404ocx8" path="res://insignia/auto_attack/scripts/shooter_attack_data.gd" id="3_s4v7q"]
+
+[resource]
+script = ExtResource("3_s4v7q")
+projectile_scene = ExtResource("1_xasx8")
+display_name = "Shooter"
+scene = ExtResource("2_u0wlu")
+fire_interval = 2.0
+metadata/_custom_type_script = "uid://djbinl404ocx8"

@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://tnndqaclfpe1"]
+
+[ext_resource type="Script" uid="uid://ba5oq63524eey" path="res://insignia/auto_attack/scenes/shooter_insignia.gd" id="1_na07h"]
+
+[node name="ShooterInsignia" type="Node2D" unique_id=1706993113]
+script = ExtResource("1_na07h")

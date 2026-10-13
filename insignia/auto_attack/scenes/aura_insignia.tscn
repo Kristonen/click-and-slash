@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://elir4r284xhk"]
+
+[ext_resource type="Script" uid="uid://dny0owii0wko8" path="res://insignia/auto_attack/scenes/aura_insignia.gd" id="1_iblth"]
+
+[node name="AuraInsignia" type="Node2D" unique_id=201636537]
+script = ExtResource("1_iblth")

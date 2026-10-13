@@ -10,12 +10,7 @@ var upgrade : UpgradeData
 @export var upgrade_desc : Label
 
 func _ready() -> void:
-	if apply_btn:
-		apply_btn.pressed.connect(_on_apply_upgrade)
-		
-	if upgrade:
-		upgrade_name.text = upgrade.upgrade_name
-		upgrade_desc.text = upgrade.upgrade_desc
+	apply_btn.pressed.connect(_on_apply_upgrade)
 
 func set_upgrade(upgrade_data : UpgradeData) -> void:
 	upgrade = upgrade_data
@@ -23,7 +18,6 @@ func set_upgrade(upgrade_data : UpgradeData) -> void:
 	upgrade_desc.text = upgrade.upgrade_desc
 
 func _on_apply_upgrade() -> void:
-	if upgrade:
-		var stats : StatsManager = Utils.get_player().stats_manager
-		upgrade.apply(stats)
-		upgrade_applied.emit()
+	var player : Player = Utils.get_player()
+	upgrade.apply(player)
+	upgrade_applied.emit()

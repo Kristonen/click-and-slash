@@ -7,19 +7,30 @@
 [ext_resource type="PackedScene" uid="uid://fsmtw2qkffas" path="res://components/enemy/HealthComponent.tscn" id="5_pms5r"]
 [ext_resource type="PackedScene" uid="uid://dqxit7j0tmx0o" path="res://components/drop/DropComponent.tscn" id="6_jr17w"]
 [ext_resource type="PackedScene" uid="uid://i53kgg4oidjl" path="res://entity/loot/coin.tscn" id="7_gdg70"]
+[ext_resource type="PackedScene" uid="uid://dkcrjw41eo0le" path="res://entity/enemy/health_bar.tscn" id="8_gdg70"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bhunq"]
 size = Vector2(32, 32)
 
-[node name="FirstEnemy" type="CharacterBody2D" unique_id=1446427759 node_paths=PackedStringArray("health_component", "clickable")]
+[node name="FirstEnemy" type="CharacterBody2D" unique_id=1446427759 node_paths=PackedStringArray("health_component", "clickable", "health_bar")]
 script = ExtResource("1_sh4xl")
 health_component = NodePath("HealthComponent")
 clickable = NodePath("Clickable")
+health_bar = NodePath("HealthBar")
+
+[node name="HealthBar" parent="." unique_id=668596064 instance=ExtResource("8_gdg70")]
+custom_minimum_size = Vector2(32, 6)
+offset_left = -16.0
+offset_top = -24.0
+offset_right = 16.0
+offset_bottom = -18.0
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=95242730]
 texture = ExtResource("2_wy55s")
 
 [node name="Clickable" parent="." unique_id=1213497317 instance=ExtResource("3_jr17w")]
+collision_layer = 2
+collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Clickable" unique_id=1674330500]
 shape = SubResource("RectangleShape2D_bhunq")
@@ -29,14 +40,14 @@ speed = 50.0
 wander_radius = 200.0
 body = NodePath("..")
 
-[node name="HealthComponent" parent="." unique_id=29071247 instance=ExtResource("5_pms5r")]
-current_health = 10.0
-max_health = 10.0
-
 [node name="DropComponent" parent="." unique_id=1208740868 node_paths=PackedStringArray("clickable", "health_component") instance=ExtResource("6_jr17w")]
 item_scene = ExtResource("7_gdg70")
 min_amount = 2
-max_amount = 10
+max_amount = 4
 drop_on_click = true
 clickable = NodePath("../Clickable")
 health_component = NodePath("../HealthComponent")
+
+[node name="HealthComponent" parent="." unique_id=29071247 instance=ExtResource("5_pms5r")]
+current_health = 10.0
+max_health = 10.0

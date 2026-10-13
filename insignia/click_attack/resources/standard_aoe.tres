@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="AoEClickData" format=3 uid="uid://dtjmbq34te3fp"]
+
+[ext_resource type="PackedScene" uid="uid://clj4rwsdmcpem" path="res://insignia/click_attack/scenes/aoe_click_insignia.tscn" id="1_6ra0c"]
+[ext_resource type="Script" uid="uid://x4kfs4w5humo" path="res://insignia/click_attack/scripts/aoe_click_data.gd" id="1_ticgq"]
+
+[resource]
+script = ExtResource("1_ticgq")
+display_name = "AoE"
+scene = ExtResource("1_6ra0c")
+metadata/_custom_type_script = "uid://x4kfs4w5humo"

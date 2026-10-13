@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://dk830tqwwm4m2"]
+
+[ext_resource type="Script" uid="uid://ckrwe5niphuhf" path="res://insignia/click_attack/scenes/precision_click_insignia.gd" id="1_hvljv"]
+
+[node name="PrecisionClickInsignia" type="Node2D" unique_id=2006687631]
+script = ExtResource("1_hvljv")

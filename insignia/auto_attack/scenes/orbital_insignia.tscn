@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://baulpgj41xiao"]
+
+[ext_resource type="Script" uid="uid://di4wxhkjrnq3m" path="res://insignia/auto_attack/scenes/orbital_insignia.gd" id="1_cn5se"]
+
+[node name="OrbitalInsignia" type="Node2D" unique_id=1993198067]
+script = ExtResource("1_cn5se")

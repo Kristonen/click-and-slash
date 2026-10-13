@@ -34,5 +34,5 @@ func drop(pos : Vector2) -> void:
 		var item : Item = item_scene.instantiate()
 		if !item: return
 		item.global_position = pos
-		get_tree().current_scene.add_child(item)
+		get_tree().current_scene.add_child.call_deferred(item)
 		

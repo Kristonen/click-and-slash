@@ -9,7 +9,6 @@ signal wave_started
 @export var enemy_container : Node
 @export var spawner_scene : PackedScene
 @export var spawn_data : Array[SpawnData]
-@export var upgrade_ui_scene : PackedScene
 
 var current_wave_index : int = 0
 var kill_count : int = 0
@@ -44,10 +43,10 @@ func finish_wave() -> void:
 	var current_wave : WaveData = waves[current_wave_index]
 	current_wave_index += 1
 	current_wave.goal.cleanup_listeners()
-	if current_wave.wave_number % 1 == 0 && get_parent() is Level:
-		get_tree().paused = true
-		var upgrade_ui : UpgradeUI = upgrade_ui_scene.instantiate()
-		var size : Vector2 = get_viewport().get_visible_rect().size
-		upgrade_ui.global_position = Vector2(size.x / 2, size.y / 2)
-		get_parent().add_child(upgrade_ui)
+	#if current_wave.wave_number % 1 == 0 && get_parent() is Level:
+		#get_tree().paused = true
+		#var upgrade_ui : UpgradeUI = upgrade_ui_scene.instantiate()
+		#var size : Vector2 = get_viewport().get_visible_rect().size
+		#upgrade_ui.global_position = Vector2(size.x / 2, size.y / 2)
+		#get_parent().add_child(upgrade_ui)
 	start_wave(current_wave_index)

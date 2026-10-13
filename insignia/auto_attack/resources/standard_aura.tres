@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="AuraAttackData" format=3 uid="uid://cw481lbgq6j2e"]
+
+[ext_resource type="PackedScene" uid="uid://elir4r284xhk" path="res://insignia/auto_attack/scenes/aura_insignia.tscn" id="1_367vo"]
+[ext_resource type="Script" uid="uid://m3wymf8ygifr" path="res://insignia/auto_attack/scripts/aura_attack_data.gd" id="1_cbkrb"]
+
+[resource]
+script = ExtResource("1_cbkrb")
+display_name = "Aura"
+scene = ExtResource("1_367vo")
+damage = 1.0
+metadata/_custom_type_script = "uid://m3wymf8ygifr"

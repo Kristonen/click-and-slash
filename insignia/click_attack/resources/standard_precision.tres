@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="ClickAttackData" format=3 uid="uid://b7nifp2qrehp"]
+
+[ext_resource type="PackedScene" uid="uid://dk830tqwwm4m2" path="res://insignia/click_attack/scenes/precision_click_insignia.tscn" id="1_rc3hm"]
+[ext_resource type="Script" uid="uid://deeat8wkjy6ks" path="res://insignia/click_attack/scripts/click_attack_data.gd" id="1_y8pi7"]
+
+[resource]
+script = ExtResource("1_y8pi7")
+display_name = "Precision"
+scene = ExtResource("1_rc3hm")
+cooldown = 1.0
+metadata/_custom_type_script = "uid://deeat8wkjy6ks"
