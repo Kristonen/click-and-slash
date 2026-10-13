@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://8rttip8xj243"]
+
+[ext_resource type="Script" uid="uid://ct7wgaxakuf3u" path="res://entity/player/player.gd" id="1_4flbx"]
+[ext_resource type="PackedScene" uid="uid://cs8l7kxnveuh7" path="res://components/drop/collector.tscn" id="2_onrkg"]
+[ext_resource type="PackedScene" uid="uid://55a1uodmvxuy" path="res://components/drop/detector.tscn" id="3_i3pqv"]
+[ext_resource type="PackedScene" uid="uid://bnqlkdqkygwyd" path="res://components/player/StatsManager.tscn" id="4_upb80"]
+[ext_resource type="PackedScene" uid="uid://kqb5266c2g3q" path="res://components/click/ClickHandler.tscn" id="5_iddd2"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_bhunq"]
+radius = 3.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_riqys"]
+radius = 81.3019
+
+[node name="Player" type="Node2D" unique_id=893300391 node_paths=PackedStringArray("collector", "detector", "stats_manager") groups=["player"]]
+script = ExtResource("1_4flbx")
+collector = NodePath("Collector")
+detector = NodePath("Detector")
+stats_manager = NodePath("StatsManager")
+
+[node name="Collector" parent="." unique_id=1284946241 instance=ExtResource("2_onrkg")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Collector" unique_id=818814118]
+shape = SubResource("CircleShape2D_bhunq")
+
+[node name="Detector" parent="." unique_id=1322762510 instance=ExtResource("3_i3pqv")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Detector" unique_id=182335735]
+shape = SubResource("CircleShape2D_riqys")
+
+[node name="StatsManager" parent="." unique_id=318261826 instance=ExtResource("4_upb80")]
+base_damage = 5.0
+
+[node name="ClickHandler" parent="." unique_id=665438146 node_paths=PackedStringArray("stats_manager") instance=ExtResource("5_iddd2")]
+stats_manager = NodePath("../StatsManager")

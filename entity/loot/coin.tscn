@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://i53kgg4oidjl"]
+
+[ext_resource type="Texture2D" uid="uid://cyry5bn746aj1" path="res://entity/loot/coin.tres" id="1_0t63x"]
+[ext_resource type="PackedScene" uid="uid://cx6eqywbvkxkr" path="res://components/drop/collectable.tscn" id="1_d5gmh"]
+[ext_resource type="Script" uid="uid://ck5h8ca1g4rtx" path="res://entity/loot/coin.gd" id="1_v7riw"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bhunq"]
+size = Vector2(8, 16)
+
+[node name="Coin" type="Node2D" unique_id=238615950 node_paths=PackedStringArray("collectable", "sprite")]
+script = ExtResource("1_v7riw")
+collectable = NodePath("Collectable")
+sprite = NodePath("Sprite2D")
+start_speed = 5.0
+max_speed = 2000.0
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=893978620]
+texture = ExtResource("1_0t63x")
+
+[node name="Collectable" parent="." unique_id=933031180 instance=ExtResource("1_d5gmh")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Collectable" unique_id=1899408276]
+shape = SubResource("RectangleShape2D_bhunq")

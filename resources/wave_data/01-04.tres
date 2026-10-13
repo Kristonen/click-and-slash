@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="WaveData" format=3 uid="uid://b2cgqamipnosk"]
+
+[ext_resource type="Script" uid="uid://cefb1p4xha8ei" path="res://resources/quest/kill_goal.gd" id="1_ixi2p"]
+[ext_resource type="Script" uid="uid://dpunjaliw1t7f" path="res://scripts/wave_data.gd" id="2_h3l58"]
+
+[sub_resource type="Resource" id="Resource_hs6h8"]
+script = ExtResource("1_ixi2p")
+target_amount = 5
+metadata/_custom_type_script = "uid://cefb1p4xha8ei"
+
+[resource]
+script = ExtResource("2_h3l58")
+wave_goal = 5
+goal = SubResource("Resource_hs6h8")
+wave_time = 300
+metadata/_custom_type_script = "uid://dpunjaliw1t7f"

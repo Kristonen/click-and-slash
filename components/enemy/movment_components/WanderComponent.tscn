@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://ccbylm4c4myde"]
+
+[ext_resource type="Script" uid="uid://be4x7lhsuv60" path="res://components/enemy/movment_components/wander_component.gd" id="1_ix4bk"]
+
+[node name="WanderComponent" type="Node" unique_id=1009510209]
+script = ExtResource("1_ix4bk")

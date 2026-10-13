@@ -2,11 +2,11 @@
 
 [ext_resource type="Script" uid="uid://bmbyqmca2mryq" path="res://entity/enemy/second_enemy/second_enemy.gd" id="1_6gok7"]
 [ext_resource type="Texture2D" uid="uid://bou0hqhnphjn3" path="res://entity/enemy/second_enemy/second_enemy.tres" id="2_hgflm"]
-[ext_resource type="PackedScene" uid="uid://fsmtw2qkffas" path="res://components/HealthComponent.tscn" id="3_g707b"]
-[ext_resource type="PackedScene" uid="uid://cl0q7kg15c3e3" path="res://components/clickable.tscn" id="4_kyeae"]
-[ext_resource type="PackedScene" uid="uid://617n71iflkl3" path="res://components/movment_components/TeleportComponent.tscn" id="5_jxgq2"]
-[ext_resource type="PackedScene" uid="uid://dqxit7j0tmx0o" path="res://components/DropComponent.tscn" id="6_g707b"]
-[ext_resource type="PackedScene" uid="uid://i53kgg4oidjl" path="res://sonstiges/coin.tscn" id="7_kyeae"]
+[ext_resource type="PackedScene" uid="uid://fsmtw2qkffas" path="res://components/enemy/HealthComponent.tscn" id="3_g707b"]
+[ext_resource type="PackedScene" uid="uid://cl0q7kg15c3e3" path="res://components/click/clickable.tscn" id="4_kyeae"]
+[ext_resource type="PackedScene" uid="uid://617n71iflkl3" path="res://components/enemy/movment_components/TeleportComponent.tscn" id="5_jxgq2"]
+[ext_resource type="PackedScene" uid="uid://dqxit7j0tmx0o" path="res://components/drop/DropComponent.tscn" id="6_g707b"]
+[ext_resource type="PackedScene" uid="uid://i53kgg4oidjl" path="res://entity/loot/coin.tscn" id="7_kyeae"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bhunq"]
 size = Vector2(32, 32)

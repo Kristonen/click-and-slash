@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="WaveData" format=3 uid="uid://bpwukdgqpjjl3"]
+
+[ext_resource type="Script" uid="uid://dpunjaliw1t7f" path="res://scripts/wave_data.gd" id="1_0oiml"]
+[ext_resource type="Script" uid="uid://ci81lniewumds" path="res://resources/quest/collect_goal.gd" id="1_4qyb2"]
+
+[sub_resource type="Resource" id="Resource_hs6h8"]
+script = ExtResource("1_4qyb2")
+target_amount = 5
+metadata/_custom_type_script = "uid://ci81lniewumds"
+
+[resource]
+script = ExtResource("1_0oiml")
+wave_goal = 10
+goal = SubResource("Resource_hs6h8")
+wave_time = 150
+metadata/_custom_type_script = "uid://dpunjaliw1t7f"

@@ -9,14 +9,11 @@ signal died(enemy : Enemy)
 func _ready() -> void:
 	if health_component:
 		health_component.died.connect(_on_died)
-		
 	if clickable:
 		clickable.clicked.connect(_on_clicked)
 
-func _on_clicked() -> void:
-	var stats : StatsManager = Game.level.player.stats_manager
-	print_debug(stats.get_damage())
-	health_component.take_damage(stats.get_damage())
+func _on_clicked(damage : float) -> void:
+	health_component.take_damage(damage)
 
 func _on_died() -> void:
 	died.emit(self)

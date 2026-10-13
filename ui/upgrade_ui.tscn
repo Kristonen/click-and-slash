@@ -1,0 +1,42 @@
+[gd_scene format=3 uid="uid://db8d4srjoskj6"]
+
+[ext_resource type="Script" uid="uid://cnwf0q7om3tss" path="res://ui/upgrade_ui.gd" id="1_fmmo1"]
+[ext_resource type="Script" uid="uid://rl7ghiwbpap7" path="res://resources/upgrade/upgrade_data.gd" id="2_g238w"]
+[ext_resource type="Resource" uid="uid://da61qf4rqq0ij" path="res://resources/upgrade/upgrade_coin_flat.tres" id="3_xhj3o"]
+[ext_resource type="Resource" uid="uid://cy3v26w2w7d1y" path="res://resources/upgrade/upgrade_dmg_per.tres" id="4_anel6"]
+[ext_resource type="Resource" uid="uid://041vpmdoyxv4" path="res://resources/upgrade/upgrade_dmg_flat.tres" id="5_u0lkr"]
+[ext_resource type="PackedScene" uid="uid://crdb6rw7y2b24" path="res://ui/upgrade_slot.tscn" id="6_bpiu7"]
+
+[node name="Control" type="Control" unique_id=1765899915 node_paths=PackedStringArray("upgrade_slots")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_fmmo1")
+avaiable_upgrades = Array[ExtResource("2_g238w")]([ExtResource("3_xhj3o"), ExtResource("4_anel6"), ExtResource("5_u0lkr")])
+upgrade_slots = [NodePath("HBoxContainer/UpgradeSlot"), NodePath("HBoxContainer/UpgradeSlot2"), NodePath("HBoxContainer/UpgradeSlot3")]
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=2010621886]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="UpgradeSlot" parent="HBoxContainer" unique_id=1830483763 instance=ExtResource("6_bpiu7")]
+layout_mode = 2
+
+[node name="UpgradeSlot2" parent="HBoxContainer" unique_id=499455622 instance=ExtResource("6_bpiu7")]
+layout_mode = 2
+
+[node name="UpgradeSlot3" parent="HBoxContainer" unique_id=2070683337 instance=ExtResource("6_bpiu7")]
+layout_mode = 2

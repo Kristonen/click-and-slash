@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="SpawnData" format=3 uid="uid://cjk4c7q6sx4vg"]
+
+[ext_resource type="PackedScene" uid="uid://cn1ag211q0rir" path="res://entity/enemy/second_enemy/SecondEnemy.tscn" id="1_qs7ox"]
+[ext_resource type="Script" uid="uid://b4f1i2hp7a62a" path="res://scripts/spawner_details.gd" id="1_tihq8"]
+
+[resource]
+script = ExtResource("1_tihq8")
+enemy_scene = ExtResource("1_qs7ox")
+max_amount = 1
+spawn_interval = 5.0
+required_wave = 3
+increase_per_wave = 2
+metadata/_custom_type_script = "uid://b4f1i2hp7a62a"

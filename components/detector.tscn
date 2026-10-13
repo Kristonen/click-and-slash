@@ -1,8 +1,0 @@
-[gd_scene format=3 uid="uid://55a1uodmvxuy"]
-
-[ext_resource type="Script" uid="uid://blka1pg2jrmgx" path="res://components/detector.gd" id="1_n88s7"]
-
-[node name="Detector" type="Area2D" unique_id=1322762510]
-collision_layer = 4
-collision_mask = 8
-script = ExtResource("1_n88s7")

@@ -1,0 +1,49 @@
+[gd_scene format=3 uid="uid://jgi4k8jh4ghu"]
+
+[ext_resource type="Script" uid="uid://qyuctyuf20uj" path="res://entity/level/level.gd" id="1_4h1qx"]
+[ext_resource type="Texture2D" uid="uid://tsen0mx252t1" path="res://sonstiges/ground.tres" id="2_mwttf"]
+[ext_resource type="PackedScene" uid="uid://8rttip8xj243" path="res://entity/player/player.tscn" id="3_bq75g"]
+[ext_resource type="PackedScene" uid="uid://b5j3d8rjcxy46" path="res://ui/game_ui.tscn" id="4_e80ia"]
+[ext_resource type="PackedScene" uid="uid://cix7aq4bn8ceh" path="res://entity/wave_manager.tscn" id="5_4ctag"]
+[ext_resource type="Script" uid="uid://dpunjaliw1t7f" path="res://scripts/wave_data.gd" id="6_sd5f4"]
+[ext_resource type="Resource" uid="uid://ctae5b5hqhrvg" path="res://resources/wave_data/01-01.tres" id="7_4h1qx"]
+[ext_resource type="Resource" uid="uid://bpwukdgqpjjl3" path="res://resources/wave_data/01-02.tres" id="8_mwttf"]
+[ext_resource type="Resource" uid="uid://trs403c1v6gc" path="res://resources/wave_data/01-03.tres" id="9_bq75g"]
+[ext_resource type="Resource" uid="uid://b2cgqamipnosk" path="res://resources/wave_data/01-04.tres" id="10_e80ia"]
+[ext_resource type="Resource" uid="uid://btx4wpo02vcyu" path="res://resources/wave_data/01-05.tres" id="11_4ctag"]
+[ext_resource type="PackedScene" uid="uid://b64pdtx3olwy3" path="res://entity/spawner/Spawner.tscn" id="12_4h1qx"]
+[ext_resource type="Script" uid="uid://b4f1i2hp7a62a" path="res://scripts/spawner_details.gd" id="13_5c86e"]
+[ext_resource type="Resource" uid="uid://bdaqfqnxxcup5" path="res://resources/spawn_data/first_enemy.tres" id="14_uqy65"]
+[ext_resource type="Resource" uid="uid://cjk4c7q6sx4vg" path="res://resources/spawn_data/second_enemy.tres" id="15_ivs8i"]
+[ext_resource type="PackedScene" uid="uid://ducccghvlt0ll" path="res://ui/upgrade_ui.tscn" id="16_mwttf"]
+
+[node name="TestWorld" type="Node2D" unique_id=1043288071 node_paths=PackedStringArray("game_ui", "wave_manager", "player")]
+script = ExtResource("1_4h1qx")
+game_ui = NodePath("CanvasLayer")
+wave_manager = NodePath("WaveManager")
+player = NodePath("Player")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2001977593]
+position = Vector2(579.49994, 328.00003)
+scale = Vector2(18.046873, 10.218751)
+texture = ExtResource("2_mwttf")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=749764337]
+position = Vector2(577, 322)
+
+[node name="Enemies" type="Node2D" parent="." unique_id=1210898731]
+y_sort_enabled = true
+
+[node name="Player" parent="." unique_id=893300391 instance=ExtResource("3_bq75g")]
+
+[node name="CanvasLayer" parent="." unique_id=1997592668 instance=ExtResource("4_e80ia")]
+
+[node name="Node" type="Node" parent="." unique_id=197126794]
+
+[node name="WaveManager" parent="." unique_id=1529627074 node_paths=PackedStringArray("spawn_container", "enemy_container") instance=ExtResource("5_4ctag")]
+waves = Array[ExtResource("6_sd5f4")]([ExtResource("7_4h1qx"), ExtResource("8_mwttf"), ExtResource("9_bq75g"), ExtResource("10_e80ia"), ExtResource("11_4ctag")])
+spawn_container = NodePath("../Node")
+enemy_container = NodePath("../Enemies")
+spawner_scene = ExtResource("12_4h1qx")
+spawn_data = Array[ExtResource("13_5c86e")]([ExtResource("14_uqy65"), ExtResource("15_ivs8i")])
+upgrade_ui_scene = ExtResource("16_mwttf")
